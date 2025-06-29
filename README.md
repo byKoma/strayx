@@ -59,7 +59,7 @@ Strayx revolutioniert die Art, wie Streamer mit ihrer Community interagieren. Ve
 
 ### Installation
 
-```bash
+\`\`\`bash
 # Repository klonen
 git clone https://github.com/yourusername/strayx.git
 cd strayx
@@ -69,33 +69,33 @@ npm install
 
 # Entwicklungsserver starten
 npm run dev
-```
+\`\`\`
 
 Die Anwendung ist nun unter `http://localhost:3000` verfügbar! 🎉
 
 ### Deployment
 
 #### Vercel (Empfohlen)
-```bash
+\`\`\`bash
 # Vercel CLI installieren
 npm i -g vercel
 
 # Deployen
 vercel
-```
+\`\`\`
 
 #### Docker
-```bash
+\`\`\`bash
 # Docker Image bauen
 docker build -t strayx .
 
 # Container starten
 docker run -p 3000:3000 strayx
-```
+\`\`\`
 
 ## 📁 Projekt-Struktur
 
-```
+\`\`\`
 strayx/
 ├── app/                    # Next.js App Router
 │   ├── page.tsx           # Landing Page
@@ -107,7 +107,7 @@ strayx/
 ├── public/               # Statische Assets
 ├── styles/               # Global Styles
 └── types/                # TypeScript Definitionen
-```
+\`\`\`
 
 ## 🎨 Tech Stack
 
@@ -132,7 +132,7 @@ Wir freuen uns über jeden Beitrag! Strayx lebt von der Community.
 
 ### Development Setup
 
-```bash
+\`\`\`bash
 # Fork das Repository
 git clone https://github.com/DEIN-USERNAME/strayx.git
 cd strayx
@@ -145,7 +145,7 @@ npm run prepare
 
 # Development server starten
 npm run dev
-```
+\`\`\`
 
 ### Pull Request Guidelines
 
@@ -232,7 +232,7 @@ Wenn dir Strayx gefällt, unterstütze uns:
     <a href="https://twitter.com/strayxapp">🐦 Follow on Twitter</a>
   </p>
 </div>
-```
+\`\`\`
 
 Diese README ist:
 

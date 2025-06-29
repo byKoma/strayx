@@ -32,11 +32,11 @@ export default function LandingPage() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 w-60 h-60 bg-blue-500/10 rounded-full blur-3xl animate-bounce delay-500"></div>
       </div>
 
@@ -47,7 +47,7 @@ export default function LandingPage() {
             <div
               className={`flex items-center space-x-3 transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"}`}
             >
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-primary/25 hover:shadow-primary/50 transition-all duration-300 hover:scale-110">
+              <div className="w-10 h-10 bg-gradient-to-br from-primary to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg shadow-primary/25 hover:shadow-primary/50 transition-all duration-300 hover:scale-110">
                 <Gamepad2 className="w-6 h-6 text-white" />
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
@@ -77,7 +77,7 @@ export default function LandingPage() {
               >
                 Login
               </Button>
-              <Button className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/80 hover:to-purple-600/80 rounded-2xl shadow-lg shadow-primary/25 hover:shadow-primary/50 transition-all duration-300 hover:scale-105">
+              <Button className="bg-gradient-to-r from-primary to-cyan-600 hover:from-primary/80 hover:to-cyan-600/80 rounded-2xl shadow-lg shadow-primary/25 hover:shadow-primary/50 transition-all duration-300 hover:scale-105">
                 Beta Zugang
               </Button>
             </div>
@@ -92,7 +92,7 @@ export default function LandingPage() {
             <div
               className={`transition-all duration-1000 delay-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
             >
-              <Badge className="mb-8 bg-gradient-to-r from-primary/20 to-purple-600/20 text-white border-primary/30 rounded-full px-6 py-2 backdrop-blur-sm hover:scale-105 transition-all duration-300">
+              <Badge className="mb-8 bg-gradient-to-r from-primary/20 to-cyan-600/20 text-white border-primary/30 rounded-full px-6 py-2 backdrop-blur-sm hover:scale-105 transition-all duration-300">
                 <Sparkles className="w-4 h-4 mr-2 animate-pulse" />
                 Brandneu: Jetzt Beta testen!
               </Badge>
@@ -106,7 +106,7 @@ export default function LandingPage() {
                   Community Games
                 </span>
                 <br />
-                <span className="bg-gradient-to-r from-primary via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
+                <span className="bg-gradient-to-r from-primary via-cyan-500 to-teal-500 bg-clip-text text-transparent animate-pulse">
                   neu gedacht
                 </span>
               </h1>
@@ -118,7 +118,7 @@ export default function LandingPage() {
               <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
                 Vergiss Google Forms und Discord Chaos! Strayx bringt{" "}
                 <span className="text-primary font-semibold">Clip Reactions</span>,
-                <span className="text-purple-400 font-semibold"> Giveaways</span> und{" "}
+                <span className="text-cyan-400 font-semibold"> Giveaways</span> und{" "}
                 <span className="text-pink-400 font-semibold">Community Games</span> auf ein neues Level - komplett
                 kostenlos.
               </p>
@@ -129,7 +129,7 @@ export default function LandingPage() {
             >
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/80 hover:to-purple-600/80 text-lg px-10 py-4 rounded-3xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all duration-500 hover:scale-110 group"
+                className="bg-gradient-to-r from-primary to-cyan-600 hover:from-primary/80 hover:to-cyan-600/80 text-lg px-10 py-4 rounded-3xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all duration-500 hover:scale-110 group"
               >
                 <Sparkles className="mr-3 w-5 h-5 group-hover:animate-spin" />
                 Beta starten
@@ -149,7 +149,7 @@ export default function LandingPage() {
               className={`flex items-center justify-center space-x-12 text-gray-400 transition-all duration-1000 delay-1100 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}
             >
               {[
-                { icon: Twitch, name: "Twitch", color: "hover:text-purple-400" },
+                { icon: Twitch, name: "Twitch", color: "hover:text-cyan-400" },
                 { icon: Youtube, name: "YouTube", color: "hover:text-red-400" },
                 { icon: Monitor, name: "Alle Plattformen", color: "hover:text-blue-400" },
               ].map((platform, index) => (
@@ -176,7 +176,7 @@ export default function LandingPage() {
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">
                 Revolutionäre Features
               </span>
             </h2>
@@ -191,66 +191,62 @@ export default function LandingPage() {
                 icon: Play,
                 title: "Clip Reactions",
                 description: "Lass deine Community Clips bewerten und kommentieren. Live-Reactions in Echtzeit!",
-                gradient: "from-slate-800/50 to-slate-700/50",
                 iconColor: "text-red-400",
-                borderColor: "border-red-500/20",
+                iconBg: "bg-red-500/20",
               },
               {
                 icon: Gift,
                 title: "Smart Giveaways",
                 description: "Faire und transparente Giveaways mit automatischer Gewinner-Auswahl und Anti-Cheat.",
-                gradient: "from-slate-800/50 to-slate-700/50",
                 iconColor: "text-green-400",
-                borderColor: "border-green-500/20",
+                iconBg: "bg-green-500/20",
               },
               {
                 icon: ImageIcon,
                 title: "Bilderreactions",
                 description: "Zeige Bilder und sammle Reaktionen deiner Community in Echtzeit mit Emoji-Regen.",
-                gradient: "from-slate-800/50 to-slate-700/50",
                 iconColor: "text-blue-400",
-                borderColor: "border-blue-500/20",
+                iconBg: "bg-blue-500/20",
               },
               {
                 icon: MessageSquare,
                 title: "Q&A Sessions",
                 description: "Sammle und moderiere Fragen live. Mit Upvoting und automatischer Sortierung.",
-                gradient: "from-slate-800/50 to-slate-700/50",
-                iconColor: "text-purple-400",
-                borderColor: "border-purple-500/20",
+                iconColor: "text-cyan-400",
+                iconBg: "bg-cyan-500/20",
               },
               {
                 icon: Users,
                 title: "Live Polls",
                 description: "Interaktive Umfragen mit Echtzeit-Ergebnissen und schönen Visualisierungen.",
-                gradient: "from-slate-800/50 to-slate-700/50",
                 iconColor: "text-orange-400",
-                borderColor: "border-orange-500/20",
+                iconBg: "bg-orange-500/20",
               },
               {
                 icon: Zap,
                 title: "Stream Integration",
                 description: "Nahtlose Integration mit OBS, Streamlabs und allen gängigen Streaming-Tools.",
-                gradient: "from-slate-800/50 to-slate-700/50",
                 iconColor: "text-pink-400",
-                borderColor: "border-pink-500/20",
+                iconBg: "bg-pink-500/20",
               },
             ].map((feature, index) => (
               <Card
                 key={feature.title}
-                className={`group bg-gradient-to-br ${feature.gradient} ${feature.borderColor} border backdrop-blur-xl hover:border-opacity-40 transition-all duration-500 hover:scale-105 hover:-translate-y-2 rounded-3xl overflow-hidden`}
+                className="group bg-gradient-to-br from-slate-800/90 to-slate-900/90 border-slate-700/50 backdrop-blur-xl hover:border-primary/50 hover:from-slate-700/90 hover:to-slate-800/90 transition-all duration-500 hover:scale-105 hover:-translate-y-2 rounded-3xl overflow-hidden shadow-xl shadow-black/20"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardHeader className="p-8">
                   <div
-                    className={`w-16 h-16 bg-slate-700/30 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg`}
+                    className={`w-16 h-16 ${feature.iconBg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-all duration-300 shadow-lg border border-white/10`}
                   >
                     <feature.icon className={`w-8 h-8 ${feature.iconColor}`} />
                   </div>
-                  <CardTitle className="text-white text-xl mb-4 group-hover:text-primary transition-colors duration-300">
+                  <CardTitle className="text-white text-xl mb-4 group-hover:text-cyan-300 transition-colors duration-300">
                     {feature.title}
                   </CardTitle>
-                  <CardDescription className="text-gray-300 leading-relaxed">{feature.description}</CardDescription>
+                  <CardDescription className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                    {feature.description}
+                  </CardDescription>
                 </CardHeader>
               </Card>
             ))}
@@ -262,15 +258,15 @@ export default function LandingPage() {
       <section id="beta" className="relative z-30 py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-gradient-to-r from-primary/10 via-purple-500/10 to-pink-500/10 rounded-3xl p-12 backdrop-blur-xl border border-white/10 shadow-2xl">
+            <div className="bg-gradient-to-r from-primary/10 via-cyan-500/10 to-teal-500/10 rounded-3xl p-12 backdrop-blur-xl border border-white/10 shadow-2xl">
               <div className="text-center mb-12">
-                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary/20 to-purple-600/20 rounded-full px-6 py-3 mb-6">
+                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary/20 to-cyan-600/20 rounded-full px-6 py-3 mb-6">
                   <Heart className="w-5 h-5 text-red-400 animate-pulse" />
                   <span className="text-white font-medium">Werde Beta-Pioneer</span>
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
                   Hilf uns{" "}
-                  <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">
                     Strayx
                   </span>{" "}
                   zu perfektionieren
@@ -299,7 +295,7 @@ export default function LandingPage() {
                     icon: Zap,
                     title: "Keine API nötig",
                     description: "Plug & Play - ohne technische Kenntnisse sofort loslegen.",
-                    color: "text-purple-400",
+                    color: "text-cyan-400",
                   },
                 ].map((benefit, index) => (
                   <div key={benefit.title} className="text-center group">
@@ -315,7 +311,7 @@ export default function LandingPage() {
               <div className="text-center">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/80 hover:to-purple-600/80 text-lg px-12 py-4 rounded-3xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all duration-500 hover:scale-110 group"
+                  className="bg-gradient-to-r from-primary to-cyan-600 hover:from-primary/80 hover:to-cyan-600/80 text-lg px-12 py-4 rounded-3xl shadow-2xl shadow-primary/30 hover:shadow-primary/50 transition-all duration-500 hover:scale-110 group"
                 >
                   <Star className="mr-3 w-5 h-5 group-hover:animate-spin" />
                   Beta Zugang sichern
@@ -334,9 +330,7 @@ export default function LandingPage() {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Bleib auf dem{" "}
-              <span className="bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
-                Laufenden
-              </span>
+              <span className="bg-gradient-to-r from-primary to-cyan-500 bg-clip-text text-transparent">Laufenden</span>
             </h2>
             <p className="text-gray-300 mb-8 text-lg">
               Erfahre als Erstes von neuen Features, Beta-Updates und exklusiven Creator-Tipps.
@@ -347,7 +341,7 @@ export default function LandingPage() {
                 placeholder="Deine E-Mail für Beta Updates"
                 className="flex-1 bg-white/5 border-white/20 text-white placeholder:text-gray-400 rounded-2xl backdrop-blur-sm focus:border-primary transition-all duration-300"
               />
-              <Button className="bg-gradient-to-r from-primary to-purple-600 hover:from-primary/80 hover:to-purple-600/80 rounded-2xl transition-all duration-300 hover:scale-105">
+              <Button className="bg-gradient-to-r from-primary to-cyan-600 hover:from-primary/80 hover:to-cyan-600/80 rounded-2xl transition-all duration-300 hover:scale-105">
                 Beta Liste
               </Button>
             </div>
@@ -362,7 +356,7 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary to-purple-600 rounded-2xl flex items-center justify-center">
+                <div className="w-10 h-10 bg-gradient-to-br from-primary to-cyan-600 rounded-2xl flex items-center justify-center">
                   <Gamepad2 className="w-6 h-6 text-white" />
                 </div>
                 <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">

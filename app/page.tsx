@@ -20,19 +20,39 @@ import {
   Heart,
   Star,
   ChevronDown,
+  Menu,
 } from "lucide-react"
 import Link from "next/link"
 import { useState, useEffect } from "react"
+import { SmoothScroll } from "@/components/ui/smooth-scroll"
 
 export default function LandingPage() {
   const [isVisible, setIsVisible] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-in")
+          }
+        })
+      },
+      { threshold: 0.1 },
+    )
+
+    const elements = document.querySelectorAll(".animate-on-scroll")
+    elements.forEach((el) => observer.observe(el))
+
     setIsVisible(true)
+
+    return () => observer.disconnect()
   }, [])
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+      <SmoothScroll />
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
@@ -68,6 +88,18 @@ export default function LandingPage() {
               ))}
             </nav>
 
+            {/* Mobile Menu */}
+            <div className="md:hidden">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-gray-300 hover:text-white"
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              >
+                <Menu className="w-6 h-6" />
+              </Button>
+            </div>
+
             <div
               className={`flex items-center space-x-4 transition-all duration-1000 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"}`}
             >
@@ -84,6 +116,24 @@ export default function LandingPage() {
           </div>
         </div>
       </header>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-b border-white/10 p-6">
+          <nav className="flex flex-col space-y-4">
+            {["Features", "Beta", "Community"].map((item) => (
+              <Link
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                className="text-gray-300 hover:text-white transition-colors py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
 
       {/* Hero Section */}
       <section className="relative z-30 py-20 lg:py-32">
@@ -232,8 +282,13 @@ export default function LandingPage() {
             ].map((feature, index) => (
               <Card
                 key={feature.title}
-                className="group bg-gradient-to-br from-slate-800/90 to-slate-900/90 border-slate-700/50 backdrop-blur-xl hover:border-primary/50 hover:from-slate-700/90 hover:to-slate-800/90 transition-all duration-500 hover:scale-105 hover:-translate-y-2 rounded-3xl overflow-hidden shadow-xl shadow-black/20"
-                style={{ animationDelay: `${index * 100}ms` }}
+                className={`group bg-gradient-to-br from-slate-800/90 to-slate-900/90 border-slate-700/50 backdrop-blur-xl hover:border-primary/50 hover:from-slate-700/90 hover:to-slate-800/90 transition-all duration-500 hover:scale-105 hover:-translate-y-2 rounded-3xl overflow-hidden shadow-xl shadow-black/20 ${
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+                }`}
+                style={{
+                  transitionDelay: `${index * 150 + 1200}ms`,
+                  animationDelay: `${index * 150}ms`,
+                }}
               >
                 <CardHeader className="p-8">
                   <div
@@ -408,6 +463,16 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
+
+      {/* Scroll to Top Button */}
+      {isVisible && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          className="fixed bottom-8 right-8 z-50 w-12 h-12 bg-gradient-to-r from-primary to-cyan-600 rounded-full flex items-center justify-center shadow-lg shadow-primary/25 hover:shadow-primary/50 transition-all duration-300 hover:scale-110 group"
+        >
+          <ChevronDown className="w-6 h-6 text-white rotate-180 group-hover:-translate-y-1 transition-transform" />
+        </button>
+      )}
     </div>
   )
 }
